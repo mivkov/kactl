@@ -99,3 +99,11 @@
 			\item ways a convex polygon with $n+2$ sides can be cut into triangles by connecting vertices with straight lines.
 			\item permutations of $[n]$ with no 3-term increasing subseq.
 		\end{itemize}
+
+	\subsection{Graph Colorings}
+		Chromatic polynomial $P(G, x)$ gives number of proper colorings of $G$ using $x$ colors.
+		\[ P(G, x) = P(G - uv, x) - P(G \setminus uv, x)\]
+		for any edge $uv\in G$. \\
+		$P(T_n, x) = x(x - 1)^{n-1}$ for any tree $T$ on $n$ vertices \\
+		$P(C_n, x) = (x-1)^n + (-1)^n\cdot (x-1)$ for the $n$-cycle
+

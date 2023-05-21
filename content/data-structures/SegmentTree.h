@@ -3,18 +3,15 @@
  * Date: 2017-10-31
  * License: CC0
  * Source: folklore
- * Description: Zero-indexed max-tree. Bounds are inclusive to the left and exclusive to the right. Can be changed by modifying T, f and unit.
+ * Description: Zero-indexed seg-tree. Bounds are inclusive to the left and exclusive to the right. Specify T, f, unit to use.
  * Time: O(\log N)
  * Status: stress-tested
  */
 #pragma once
 
-struct Tree {
-	typedef int T;
-	static constexpr T unit = INT_MIN;
-	T f(T a, T b) { return max(a, b); } // (any associative fn)
+template <class T, T (*f)(T, T), T (*unit)()> struct Seg {
 	vector<T> s; int n;
-	Tree(int n = 0, T def = unit) : s(2*n, def), n(n) {}
+	Seg(int n = 0, T def = unit()) : s(2*n, def), n(n) {}
 	void update(int pos, T val) {
 		for (s[pos += n] = val; pos /= 2;)
 			s[pos] = f(s[pos * 2], s[pos * 2 + 1]);
@@ -27,4 +24,6 @@ struct Tree {
 		}
 		return f(ra, rb);
 	}
+
+	T get(int x) { return s[x+n]; }
 };
