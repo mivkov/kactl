@@ -2,7 +2,7 @@
 DIR=${1:-.}
 
 # use a precompiled header for the template to improve perf
-g++ -Wall -Wfatal-errors -Wconversion -std=c++17 -O2 $DIR/stress-tests/utilities/template.h
+g++-12 -Wall -Wfatal-errors -Wconversion -std=c++20 -O2 $DIR/stress-tests/utilities/template.h
 trap "rm -f $DIR/stress-tests/utilities/template.h.gch" EXIT
 
 tests="$(find $DIR/stress-tests -name '*.cpp')"
