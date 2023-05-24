@@ -7,7 +7,8 @@
  *  runs a callback for the edges in each. In a biconnected component there
  *  are at least two distinct paths between any two nodes. Note that a node can
  *  be in several components. An edge which is not in a component is a bridge,
- *  i.e., not part of any cycle.
+ *  i.e., not part of any cycle. Take care to handle singular edges and isolated
+ *  vertices separately.
  * Usage:
  *  int eid = 0; ed.resize(N);
  *  for each edge (a,b) {
