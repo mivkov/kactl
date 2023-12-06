@@ -3,15 +3,12 @@
  * Date: 2023-12-05
  * License: CC0
  * Source: https://cp-algorithms.com/geometry/minkowski.html
- * Description: Computes the Minkowski sum of two convex polygons, ordered counterclockwise
+ * Description: Computes the Minkowski sum of two convex polygons, ordered counterclockwise.
  * Time: $O(|P| + |Q|)$
  * Status: tested
  */
 #pragma once
-#include <bits/stdc++.h>
-using namespace std;
 
-#include "../contest/template.cpp"
 #include "Point.h"
 
 typedef Point<ll> P;
